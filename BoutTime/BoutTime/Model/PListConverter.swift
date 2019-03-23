@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PListError {
+enum PListError : Error {
     case invalidResource
     case conversionFailure
 }
