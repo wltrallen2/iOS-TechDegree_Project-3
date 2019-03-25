@@ -16,6 +16,12 @@ class ScoreVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - Action Methods
+    
+    @IBAction func playAgainImageTapped(_ sender: Any) {
+        //FIXME: Add code
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -29,11 +29,35 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         // Do any additional setup after loading the view.
     }
     
-    /**********************************************************************
-     UICollectionViewDataSource Methods
-     **********************************************************************/
+    // MARK: - Action Methods
     
     
+    @IBAction func upArrowImageTapped(_ sender: Any) {
+    }
+    
+    @IBAction func downArrowImageTapped(_ sender: Any) {
+    }
+    
+    @IBAction func labelTapped(_ sender: Any) {
+    }
+    
+    @IBAction func nextRoundImageTapped(_ sender: Any) {
+    }
+
+    // MARK: - Shake Gesture Methods
+    
+    /* FIXME: Do I need this code?
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }*/
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            //FIXME: Add code here
+        }
+    }
+    
+    // MARK: - UICollectionViewDataSource Methods
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numItems
@@ -58,9 +82,7 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         return cell
     }
     
-    /**********************************************************************
-     UICollectionViewDelegateFlowLayout Methods
-     **********************************************************************/
+    // MARK: - UICollectionViewDelegateFlowLayout Methods
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: collectionViewFlowLayoutPadding,

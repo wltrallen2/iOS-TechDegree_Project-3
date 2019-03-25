@@ -16,6 +16,11 @@ class WebVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - Action Methods
+    
+    @IBAction func webBarImageTapped(_ sender: Any) {
+    }
+    
 
     /*
     // MARK: - Navigation

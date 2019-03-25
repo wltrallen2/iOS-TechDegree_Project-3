@@ -10,8 +10,9 @@ import UIKit
 
 class SplashVC: UIViewController {
 
+    
     @IBOutlet weak var playButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +21,4 @@ class SplashVC: UIViewController {
     }
     
 
-    @IBAction func presentGame() {
-        //TODO: Present GameVC
-    }
 }
