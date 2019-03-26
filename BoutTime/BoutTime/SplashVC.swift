@@ -20,5 +20,22 @@ class SplashVC: UIViewController {
         playButton.layer.cornerRadius = 25
     }
     
+     // MARK: - Navigation
+     
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let gameVC = segue.destination as? GameVC else {
+            fatalError()
+        }
+        
+        do {
+        gameVC.game = try Game(withNumItemsPerRound: GameConstants.numItemsPerRound,
+                           andNumRounds: GameConstants.numRounds,
+                           whereRoundsAreOfLengthInSeconds: GameConstants.numSecondsperRound,
+                           usingDataFromPListWithName: GameConstants.pListName)
+        } catch let error {
+            print("\(error)")
+            fatalError()
+        }
+     }
 
 }

@@ -16,12 +16,11 @@ fileprivate let reuseIdentifierForDoubleArrow = "GameCVCellDouble"
 fileprivate let collectionViewFlowLayoutPadding: CGFloat = 10
 fileprivate let collectionViewFlowLayoutSpacing: CGFloat = 10
 
-//FIXME: Refractor with data from game
-fileprivate let numItems = 4
-
 class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var game: Game?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,10 +59,12 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     // MARK: - UICollectionViewDataSource Methods
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numItems
+        return game?.numItemsPerRound ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let numItems = game?.numItemsPerRound ?? 0
+        
         let reuseIdentifier: String
         if indexPath.row == 0 {
             reuseIdentifier = reuseIdentifierForSingleUpArrow
@@ -76,8 +77,7 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? GameCVCell else { fatalError() }
 
         
-        cell.backgroundColor = UIColor.red
-        cell.titleLabel.text = "Musical Name Goes Here: This is included for a really long muscial name test."
+        cell.titleLabel.text = game?.eventsForCurrentRound[indexPath.row].description ?? ""
         
         return cell
     }
@@ -97,6 +97,7 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let doublePadding = collectionViewFlowLayoutPadding * 2
+        let numItems = game?.numItemsPerRound ?? 0
         let numSpaces = CGFloat(integerLiteral: numItems - 1)
         let totalSpaceBetweenItems = collectionViewFlowLayoutSpacing * numSpaces
         

@@ -9,7 +9,14 @@
 import Foundation
 
 enum GameError: Error {
+    case eventMissingInPlayerArray
     case insufficientData
+    case gameOver
+}
+
+enum TimelineDirection: Int {
+    case up = -1
+    case down = 1
 }
 
 class Game {
@@ -18,7 +25,10 @@ class Game {
     var numSecondsPerRound: Int
     
     var events:[Event]
+    
+    var currentRound: Int
     var eventsForCurrentRound:[Event]
+    var eventsInThisRoundOrderedByPlayer: [Event]
     
     init(withNumItemsPerRound num: Int,
          andNumRounds rounds: Int,
@@ -41,12 +51,24 @@ class Game {
             throw GameError.insufficientData
         }
         
+        currentRound = 1
         eventsForCurrentRound = [Event]()
-        startRound()
+        eventsInThisRoundOrderedByPlayer = [Event]()
+        
+        do {
+            try startRound()
+        } catch let error {
+            throw error
+        }
     }
     
-    func startRound() {
+    func startRound() throws {
+        guard currentRound <= numRounds else {
+            throw GameError.gameOver
+        }
+        
         eventsForCurrentRound = popEventsForRound()
+        eventsInThisRoundOrderedByPlayer = Array(eventsForCurrentRound)
         
         //FIXME: Start timer?
     }
@@ -63,8 +85,23 @@ class Game {
         return eventsForRound
     }
     
-    func checkForCorrectness(usingProposedAnswer proposedAnswer: [Event]) -> Bool {
+    func move(_ event: Event, oneItem direction: TimelineDirection) throws {
+        guard let eventIndex = eventsInThisRoundOrderedByPlayer.firstIndex(of: event) else {
+            throw GameError.eventMissingInPlayerArray
+        }
+        
+        let swapIndex = eventIndex + direction.rawValue
+        eventsInThisRoundOrderedByPlayer.swapAt(eventIndex, swapIndex)
+    }
+    
+    func hasNextRound() -> Bool {
+        return currentRound <= numRounds
+    }
+    
+    func checkAnswerAndEndRound() -> Bool {
+        currentRound += 1
+        
         eventsForCurrentRound.sort()
-        return eventsForCurrentRound == proposedAnswer
+        return eventsForCurrentRound == eventsInThisRoundOrderedByPlayer
     }
 }
