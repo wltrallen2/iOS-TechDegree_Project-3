@@ -310,6 +310,9 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="eGt-MJ-sbZ" id="aoc-Ke-Fs4"/>
+                        <outlet property="instructionLabel" destination="HSJ-pi-KjI" id="jJx-bd-rIi"/>
+                        <outlet property="nextRoundImageView" destination="hM8-95-451" id="Bjp-dh-L49"/>
+                        <outlet property="timerLabel" destination="8VN-H5-feq" id="P77-qN-M47"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJ7-QD-Jgb" userLabel="First Responder" sceneMemberID="firstResponder"/>

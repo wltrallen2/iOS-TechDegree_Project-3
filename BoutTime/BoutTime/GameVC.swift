@@ -12,6 +12,9 @@ fileprivate let reuseIdentifierForSingleUpArrow = "GameCVCellSingleUp"
 fileprivate let reuseIdentifierForSingleDownArrow = "GameCVCellSingleDown"
 fileprivate let reuseIdentifierForDoubleArrow = "GameCVCellDouble"
 
+fileprivate let correctButtonName = "next_round_success"
+fileprivate let wrongButtonName = "next_round_fail"
+
 
 fileprivate let collectionViewFlowLayoutPadding: CGFloat = 10
 fileprivate let collectionViewFlowLayoutSpacing: CGFloat = 10
@@ -19,6 +22,9 @@ fileprivate let collectionViewFlowLayoutSpacing: CGFloat = 10
 class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var instructionLabel: UILabel!
+    @IBOutlet weak var nextRoundImageView: UIImageView!
     
     var game: Game?
     
@@ -26,6 +32,7 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        startRound()
     }
     
     // MARK: - Action Methods
@@ -46,7 +53,15 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     }
     
     @IBAction func nextRoundImageTapped(_ sender: Any) {
-        print("nextRound")
+        if game?.hasNextRound() == true {
+            do {
+                try game?.startRound()
+                self.collectionView.reloadData()
+                startRound()
+            } catch let error {
+                print(error)
+            }
+        }
     }
 
     // MARK: - Shake Gesture Methods
@@ -58,8 +73,7 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            //FIXME: Add code here
-            print("Shake")
+            checkAnswerAndEndRound()
         }
     }
     
@@ -165,5 +179,27 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             
             self.collectionView.reloadData()
         }
+    }
+    
+    func startRound() {
+        // FIXME: Actually start the timer.
+        timerLabel.isHidden = false
+        instructionLabel.text = "Shake to check your answer."
+        nextRoundImageView.isHidden = true
+    }
+    
+    func checkAnswerAndEndRound() {
+        // FIXME: Stop the timer.
+        
+        // FIXME: What to do if there is no final round?
+        if game?.checkAnswerAndEndRound() == true {
+            nextRoundImageView.image = UIImage(named: correctButtonName)
+        } else {
+            nextRoundImageView.image = UIImage(named: wrongButtonName)
+        }
+        
+        timerLabel.isHidden = true
+        instructionLabel.text = "Tap a show title to learn more."
+        nextRoundImageView.isHidden = false
     }
 }
