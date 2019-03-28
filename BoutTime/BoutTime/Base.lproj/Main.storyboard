@@ -101,28 +101,34 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mEy-m4-siU">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GameCV Cell Single Up" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3t4-Wr-kPG">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AnF-mg-f0E">
                                                             <rect key="frame" x="0.0" y="0.0" width="327.5" height="95"/>
-                                                            <gestureRecognizers/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <connections>
-                                                                <outletCollection property="gestureRecognizers" destination="f5Y-TV-AUe" appends="YES" id="Mv5-hc-NeU"/>
-                                                            </connections>
-                                                        </label>
+                                                            <subviews>
+                                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GameCV Cell Single Up" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3t4-Wr-kPG">
+                                                                    <rect key="frame" x="20" y="15" width="287.5" height="65"/>
+                                                                    <gestureRecognizers/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="3t4-Wr-kPG" firstAttribute="leading" secondItem="AnF-mg-f0E" secondAttribute="leading" constant="20" id="ZEw-9d-qvO"/>
+                                                                <constraint firstAttribute="bottom" secondItem="3t4-Wr-kPG" secondAttribute="bottom" constant="15" id="abH-RW-5tK"/>
+                                                                <constraint firstItem="3t4-Wr-kPG" firstAttribute="top" secondItem="AnF-mg-f0E" secondAttribute="top" constant="15" id="dIo-dL-nBu"/>
+                                                                <constraint firstAttribute="trailing" secondItem="3t4-Wr-kPG" secondAttribute="trailing" constant="20" id="fd4-IQ-Y6m"/>
+                                                            </constraints>
+                                                        </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gdl-bn-UzC">
                                                             <rect key="frame" x="327.5" y="0.0" width="47.5" height="95"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up_full" highlightedImage="up_full_selected" translatesAutoresizingMaskIntoConstraints="NO" id="8H2-cP-v0T">
+                                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up_full" highlightedImage="up_full_selected" translatesAutoresizingMaskIntoConstraints="NO" id="8H2-cP-v0T">
                                                                     <rect key="frame" x="0.0" y="0.0" width="47.5" height="95"/>
                                                                     <gestureRecognizers/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="8H2-cP-v0T" secondAttribute="height" multiplier="1:2" id="BvS-fE-zVV"/>
                                                                     </constraints>
-                                                                    <connections>
-                                                                        <outletCollection property="gestureRecognizers" destination="IFU-9L-Eft" appends="YES" id="9am-SA-hAG"/>
-                                                                    </connections>
                                                                 </imageView>
                                                             </subviews>
                                                         </stackView>
@@ -151,36 +157,39 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0E0-of-S04">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game CVCell Double" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn8-F5-xBY">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hg-hu-N8a">
                                                             <rect key="frame" x="0.0" y="0.0" width="327.5" height="95"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <connections>
-                                                                <outletCollection property="gestureRecognizers" destination="f5Y-TV-AUe" appends="YES" id="hF2-MP-sVH"/>
-                                                            </connections>
-                                                        </label>
+                                                            <subviews>
+                                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game CVCell Double" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn8-F5-xBY">
+                                                                    <rect key="frame" x="20" y="15" width="287.5" height="65"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="xn8-F5-xBY" secondAttribute="bottom" constant="15" id="4GR-fp-McJ"/>
+                                                                <constraint firstAttribute="trailing" secondItem="xn8-F5-xBY" secondAttribute="trailing" constant="20" id="Q3f-Qn-DyU"/>
+                                                                <constraint firstItem="xn8-F5-xBY" firstAttribute="top" secondItem="4hg-hu-N8a" secondAttribute="top" constant="15" id="U1U-du-bRJ"/>
+                                                                <constraint firstItem="xn8-F5-xBY" firstAttribute="leading" secondItem="4hg-hu-N8a" secondAttribute="leading" constant="20" id="dzo-Bz-tKZ"/>
+                                                            </constraints>
+                                                        </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="89O-ym-O4S">
                                                             <rect key="frame" x="327.5" y="0.0" width="47.5" height="95"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up_half" highlightedImage="up_half_selected" translatesAutoresizingMaskIntoConstraints="NO" id="0jC-sX-wGa">
+                                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up_half" highlightedImage="up_half_selected" translatesAutoresizingMaskIntoConstraints="NO" id="0jC-sX-wGa">
                                                                     <rect key="frame" x="0.0" y="0.0" width="47.5" height="47.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="0jC-sX-wGa" secondAttribute="height" multiplier="1:1" id="HI6-y0-Z8f"/>
                                                                     </constraints>
-                                                                    <connections>
-                                                                        <outletCollection property="gestureRecognizers" destination="IFU-9L-Eft" appends="YES" id="Wgk-IL-3Y2"/>
-                                                                    </connections>
                                                                 </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down_half" highlightedImage="down_half_selected" translatesAutoresizingMaskIntoConstraints="NO" id="bh5-KZ-JEb">
+                                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down_half" highlightedImage="down_half_selected" translatesAutoresizingMaskIntoConstraints="NO" id="bh5-KZ-JEb">
                                                                     <rect key="frame" x="0.0" y="47.5" width="47.5" height="47.5"/>
                                                                     <gestureRecognizers/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="bh5-KZ-JEb" secondAttribute="height" multiplier="1:1" id="S2j-gc-JgE"/>
                                                                     </constraints>
-                                                                    <connections>
-                                                                        <outletCollection property="gestureRecognizers" destination="l2T-KN-FfG" appends="YES" id="w5i-5P-r4Z"/>
-                                                                    </connections>
                                                                 </imageView>
                                                             </subviews>
                                                         </stackView>
@@ -210,26 +219,32 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAd-kS-Nn3">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game CVCell Single Down" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wU-25-tOL">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWt-ZA-dhw">
                                                             <rect key="frame" x="0.0" y="0.0" width="327.5" height="95"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <connections>
-                                                                <outletCollection property="gestureRecognizers" destination="f5Y-TV-AUe" appends="YES" id="Gns-Wm-VeL"/>
-                                                            </connections>
-                                                        </label>
+                                                            <subviews>
+                                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game CVCell Single Down" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wU-25-tOL">
+                                                                    <rect key="frame" x="20" y="15" width="287.5" height="65"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="6wU-25-tOL" secondAttribute="trailing" constant="20" id="Hob-o8-8TK"/>
+                                                                <constraint firstAttribute="bottom" secondItem="6wU-25-tOL" secondAttribute="bottom" constant="15" id="b3b-dN-VZ8"/>
+                                                                <constraint firstItem="6wU-25-tOL" firstAttribute="top" secondItem="aWt-ZA-dhw" secondAttribute="top" constant="15" id="ucU-bi-uDr"/>
+                                                                <constraint firstItem="6wU-25-tOL" firstAttribute="leading" secondItem="aWt-ZA-dhw" secondAttribute="leading" constant="20" id="zb7-KA-eLT"/>
+                                                            </constraints>
+                                                        </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Th-5s-DmH">
                                                             <rect key="frame" x="327.5" y="0.0" width="47.5" height="95"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down_full" highlightedImage="down_full_selected" translatesAutoresizingMaskIntoConstraints="NO" id="K4U-Im-EGB" userLabel="Down Arrow Image View">
+                                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down_full" highlightedImage="down_full_selected" translatesAutoresizingMaskIntoConstraints="NO" id="K4U-Im-EGB" userLabel="Down Arrow Image View">
                                                                     <rect key="frame" x="0.0" y="0.0" width="47.5" height="95"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="K4U-Im-EGB" secondAttribute="height" multiplier="1:2" id="IbW-m6-gHm"/>
                                                                     </constraints>
-                                                                    <connections>
-                                                                        <outletCollection property="gestureRecognizers" destination="l2T-KN-FfG" appends="YES" id="0ub-hz-HCX"/>
-                                                                    </connections>
                                                                 </imageView>
                                                             </subviews>
                                                         </stackView>
@@ -244,8 +259,8 @@
                                             <constraint firstAttribute="trailing" secondItem="JAd-kS-Nn3" secondAttribute="trailing" id="yAT-YN-fJr"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="downArrowImageView" destination="K4U-Im-EGB" id="Qso-iG-j5a"/>
                                             <outlet property="titleLabel" destination="6wU-25-tOL" id="VQI-Ia-WPm"/>
-                                            <outlet property="upArrowImageView" destination="K4U-Im-EGB" id="kdB-8v-4h1"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -266,7 +281,7 @@
                                 <color key="textColor" red="0.20392156859999999" green="0.56862745100000001" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_round_success" translatesAutoresizingMaskIntoConstraints="NO" id="hM8-95-451">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_round_success" translatesAutoresizingMaskIntoConstraints="NO" id="hM8-95-451">
                                 <rect key="frame" x="67.5" y="558.5" width="240" height="53"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -298,21 +313,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJ7-QD-Jgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="IFU-9L-Eft" userLabel="UpArrow Tap Gesture Recognizer">
-                    <connections>
-                        <action selector="upArrowImageTapped:" destination="q0f-7H-yO3" id="2QH-3N-Kex"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="l2T-KN-FfG" userLabel="DownArrow Tap Gesture Recognizer">
-                    <connections>
-                        <action selector="downArrowImageTapped:" destination="q0f-7H-yO3" id="9XA-hg-Ror"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="f5Y-TV-AUe" userLabel="Label Tap Gesture Recognizer">
-                    <connections>
-                        <action selector="labelTapped:" destination="q0f-7H-yO3" id="TwP-2P-XDz"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <tapGestureRecognizer id="CEv-AE-8Pc" userLabel="Next Round Tap Gesture Recognizer">
                     <connections>
                         <action selector="nextRoundImageTapped:" destination="q0f-7H-yO3" id="h0h-gC-EDu"/>

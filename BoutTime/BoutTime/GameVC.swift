@@ -31,16 +31,22 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     // MARK: - Action Methods
     
     
-    @IBAction func upArrowImageTapped(_ sender: Any) {
+    @IBAction func upArrowImageTapped(_ sender: UITapGestureRecognizer) {
+        move(eventForTapGestureRecognizer: sender, inDirection: .up)
     }
     
-    @IBAction func downArrowImageTapped(_ sender: Any) {
+    @IBAction func downArrowImageTapped(_ sender: UITapGestureRecognizer) {
+        move(eventForTapGestureRecognizer: sender, inDirection: .down)
     }
     
-    @IBAction func labelTapped(_ sender: Any) {
+    @IBAction func labelTapped(_ sender: UITapGestureRecognizer) {
+        if let event = getEventFor(tapGestureRecognizer: sender) {
+            print(event.url) //FIXME: Redirect to URL/WebView
+        }
     }
     
     @IBAction func nextRoundImageTapped(_ sender: Any) {
+        print("nextRound")
     }
 
     // MARK: - Shake Gesture Methods
@@ -53,6 +59,7 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             //FIXME: Add code here
+            print("Shake")
         }
     }
     
@@ -67,17 +74,30 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         
         let reuseIdentifier: String
         if indexPath.row == 0 {
-            reuseIdentifier = reuseIdentifierForSingleUpArrow
-        } else if indexPath.row == numItems - 1 {
             reuseIdentifier = reuseIdentifierForSingleDownArrow
+        } else if indexPath.row == numItems - 1 {
+            reuseIdentifier = reuseIdentifierForSingleUpArrow
         } else {
             reuseIdentifier = reuseIdentifierForDoubleArrow
         }
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? GameCVCell else { fatalError() }
 
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
+        cell.titleLabel.addGestureRecognizer(tapGestureRecognizer)
         
-        cell.titleLabel.text = game?.eventsForCurrentRound[indexPath.row].description ?? ""
+        if indexPath.row > 0 {
+            let tapGestureRecognizerUp = UITapGestureRecognizer(target: self, action: #selector(upArrowImageTapped(_:)))
+            cell.upArrowImageView.addGestureRecognizer(tapGestureRecognizerUp)
+        }
+        
+        if indexPath.row < numItems - 1 {
+            let tapGestureRecognizerDown = UITapGestureRecognizer(target: self, action: #selector(downArrowImageTapped(_:)))
+            cell.downArrowImageView.addGestureRecognizer(tapGestureRecognizerDown)
+        }
+        
+        cell.event = game?.eventsInThisRoundOrderedByPlayer[indexPath.row] ?? nil
+        cell.titleLabel.text = cell.event?.description ?? ""
         
         return cell
     }
@@ -107,5 +127,43 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         let size = CGSize(width: width, height: height)
         
         return size
+    }
+    
+    // MARK: - Helper Methods
+    
+    func findClosestSuperView(ofClass classToTest: AnyClass, ofView view: UIView) -> UIView? {
+        var viewToTest: UIView = view
+        while true {
+            if let superview = viewToTest.superview {
+                if superview.isKind(of: classToTest) {
+                    return superview
+                } else {
+                    viewToTest = superview
+                }
+            } else {
+                return nil
+            }
+        }
+    }
+    
+    func getEventFor(tapGestureRecognizer: UITapGestureRecognizer) -> Event? {
+        if let view = tapGestureRecognizer.view,
+            let gameCVCell = findClosestSuperView(ofClass: GameCVCell.self, ofView: view) as? GameCVCell {
+            return gameCVCell.event
+        }
+        
+        return nil
+    }
+    
+    func move(eventForTapGestureRecognizer tapGestureRecognizer: UITapGestureRecognizer, inDirection direction: TimelineDirection) {
+        if let event = getEventFor(tapGestureRecognizer: tapGestureRecognizer) {
+            do {
+                try game?.move(event, oneItem: direction)
+            } catch let error {
+                print(error)
+            }
+            
+            self.collectionView.reloadData()
+        }
     }
 }

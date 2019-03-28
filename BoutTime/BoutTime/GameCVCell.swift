@@ -15,6 +15,8 @@ class GameCVCell: UICollectionViewCell {
     @IBOutlet weak var upArrowImageView: UIImageView!
     @IBOutlet weak var downArrowImageView: UIImageView!
     
+    var event: Event?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
