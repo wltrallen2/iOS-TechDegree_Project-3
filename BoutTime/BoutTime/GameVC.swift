@@ -194,6 +194,7 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         timerLabel.isHidden = false
         instructionLabel.text = "Shake to check your answer."
         nextRoundButton.isHidden = true
+        self.collectionView.reloadData()
     }
     
     func checkAnswerAndEndRound() {

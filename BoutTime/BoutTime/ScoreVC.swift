@@ -16,25 +16,25 @@ class ScoreVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         scoreLabel.text? = scoreToPresent
     }
     
     // MARK: - Action Methods
     
     @IBAction func playAgainImageTapped(_ sender: Any) {
-        //FIXME: Add code
+        if let gameVC = self.presentingViewController as? GameVC {
+            do {
+                gameVC.game = try Game(withNumItemsPerRound: GameConstants.numItemsPerRound,
+                                       andNumRounds: GameConstants.numRounds,
+                                       whereRoundsAreOfLengthInSeconds: GameConstants.numSecondsperRound,
+                                       usingDataFromPListWithName: GameConstants.pListName)
+                gameVC.startRound()
+            } catch let error {
+                print("\(error)")
+                fatalError()
+            }
+
+        dismiss(animated: true, completion: nil )
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
