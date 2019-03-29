@@ -12,9 +12,10 @@ fileprivate let reuseIdentifierForSingleUpArrow = "GameCVCellSingleUp"
 fileprivate let reuseIdentifierForSingleDownArrow = "GameCVCellSingleDown"
 fileprivate let reuseIdentifierForDoubleArrow = "GameCVCellDouble"
 
+fileprivate let presentScoreVCIdentifier = "presentScoreVC"
+
 fileprivate let correctButtonName = "next_round_success"
 fileprivate let wrongButtonName = "next_round_fail"
-
 
 fileprivate let collectionViewFlowLayoutPadding: CGFloat = 10
 fileprivate let collectionViewFlowLayoutSpacing: CGFloat = 10
@@ -24,35 +25,35 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
-    @IBOutlet weak var nextRoundImageView: UIImageView!
+    @IBOutlet weak var nextRoundButton: UIButton!
+    
     
     var game: Game?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         startRound()
+        nextRoundButton.layer.cornerRadius = 20
     }
     
     // MARK: - Action Methods
     
-    
     @IBAction func upArrowImageTapped(_ sender: UITapGestureRecognizer) {
-        move(eventForTapGestureRecognizer: sender, inDirection: .up)
+        moveEventIdentifiedBy(sender, inDirection: .up)
     }
     
     @IBAction func downArrowImageTapped(_ sender: UITapGestureRecognizer) {
-        move(eventForTapGestureRecognizer: sender, inDirection: .down)
+        moveEventIdentifiedBy(sender, inDirection: .down)
     }
     
     @IBAction func labelTapped(_ sender: UITapGestureRecognizer) {
-        if let event = getEventFor(tapGestureRecognizer: sender) {
+        if let event = getEventIdentifiedBy(tapGestureRecognizer: sender) {
             print(event.url) //FIXME: Redirect to URL/WebView
         }
     }
     
-    @IBAction func nextRoundImageTapped(_ sender: Any) {
+    @IBAction func nextRoundButtonTapped(_ sender: Any) {
         if game?.hasNextRound() == true {
             do {
                 try game?.startRound()
@@ -61,15 +62,21 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             } catch let error {
                 print(error)
             }
+        } else {
+            performSegue(withIdentifier: presentScoreVCIdentifier, sender: self)
+        }
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == presentScoreVCIdentifier {
+            guard let scoreVC = segue.destination as? ScoreVC else { fatalError() }
+            scoreVC.scoreToPresent = "\(game?.currentScore ?? 0)/\(game?.numRounds ?? 0)"
         }
     }
 
     // MARK: - Shake Gesture Methods
-    
-    /* FIXME: Do I need this code?
-    override func becomeFirstResponder() -> Bool {
-        return true
-    }*/
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
@@ -87,6 +94,7 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         let numItems = game?.numItemsPerRound ?? 0
         
         let reuseIdentifier: String
+        // FIXME: Use switch statement here
         if indexPath.row == 0 {
             reuseIdentifier = reuseIdentifierForSingleDownArrow
         } else if indexPath.row == numItems - 1 {
@@ -145,7 +153,7 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     
     // MARK: - Helper Methods
     
-    func findClosestSuperView(ofClass classToTest: AnyClass, ofView view: UIView) -> UIView? {
+    func findClosestSuperView(ofClass classToTest: AnyClass, forView view: UIView) -> UIView? {
         var viewToTest: UIView = view
         while true {
             if let superview = viewToTest.superview {
@@ -160,17 +168,17 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         }
     }
     
-    func getEventFor(tapGestureRecognizer: UITapGestureRecognizer) -> Event? {
+    func getEventIdentifiedBy(tapGestureRecognizer: UITapGestureRecognizer) -> Event? {
         if let view = tapGestureRecognizer.view,
-            let gameCVCell = findClosestSuperView(ofClass: GameCVCell.self, ofView: view) as? GameCVCell {
+            let gameCVCell = findClosestSuperView(ofClass: GameCVCell.self, forView: view) as? GameCVCell {
             return gameCVCell.event
         }
         
         return nil
     }
     
-    func move(eventForTapGestureRecognizer tapGestureRecognizer: UITapGestureRecognizer, inDirection direction: TimelineDirection) {
-        if let event = getEventFor(tapGestureRecognizer: tapGestureRecognizer) {
+    func moveEventIdentifiedBy(_ tapGestureRecognizer: UITapGestureRecognizer, inDirection direction: TimelineDirection) {
+        if let event = getEventIdentifiedBy(tapGestureRecognizer: tapGestureRecognizer) {
             do {
                 try game?.move(event, oneItem: direction)
             } catch let error {
@@ -185,21 +193,28 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         // FIXME: Actually start the timer.
         timerLabel.isHidden = false
         instructionLabel.text = "Shake to check your answer."
-        nextRoundImageView.isHidden = true
+        nextRoundButton.isHidden = true
     }
     
     func checkAnswerAndEndRound() {
         // FIXME: Stop the timer.
         
         // FIXME: What to do if there is no final round?
+        var nextRoundButtonTitle = "  Next Round"
+        if game?.hasNextRound() == false {
+            nextRoundButtonTitle = "  See Final Score"
+        }
+        
         if game?.checkAnswerAndEndRound() == true {
-            nextRoundImageView.image = UIImage(named: correctButtonName)
+            nextRoundButton.backgroundColor = UIColor(red: 0.338, green: 0.839, blue: 0.256, alpha: 1.0)
+            nextRoundButton.setTitle("✔️" + nextRoundButtonTitle, for: .normal)
         } else {
-            nextRoundImageView.image = UIImage(named: wrongButtonName)
+            nextRoundButton.backgroundColor = UIColor.red
+            nextRoundButton.setTitle("✘" + nextRoundButtonTitle, for: .normal)
         }
         
         timerLabel.isHidden = true
         instructionLabel.text = "Tap a show title to learn more."
-        nextRoundImageView.isHidden = false
+        nextRoundButton.isHidden = false
     }
 }

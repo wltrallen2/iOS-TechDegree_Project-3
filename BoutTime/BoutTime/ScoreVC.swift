@@ -9,11 +9,15 @@
 import UIKit
 
 class ScoreVC: UIViewController {
+    
+    var scoreToPresent: String = ""
+    @IBOutlet weak var scoreLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        scoreLabel.text? = scoreToPresent
     }
     
     // MARK: - Action Methods

@@ -26,6 +26,7 @@ class Game {
     
     var events:[Event]
     
+    var currentScore: Int
     var currentRound: Int
     var eventsForCurrentRound:[Event]
     var eventsInThisRoundOrderedByPlayer: [Event]
@@ -51,7 +52,8 @@ class Game {
             throw GameError.insufficientData
         }
         
-        currentRound = 1
+        currentScore = 0
+        currentRound = 0
         eventsForCurrentRound = [Event]()
         eventsInThisRoundOrderedByPlayer = [Event]()
         
@@ -63,6 +65,8 @@ class Game {
     }
     
     func startRound() throws {
+        currentRound += 1
+        
         guard currentRound <= numRounds else {
             throw GameError.gameOver
         }
@@ -95,13 +99,17 @@ class Game {
     }
     
     func hasNextRound() -> Bool {
-        return currentRound <= numRounds
+        return currentRound < numRounds
     }
     
     func checkAnswerAndEndRound() -> Bool {
-        currentRound += 1
-        
         eventsForCurrentRound.sort()
-        return eventsForCurrentRound == eventsInThisRoundOrderedByPlayer
+        let correct = (eventsForCurrentRound == eventsInThisRoundOrderedByPlayer)
+        
+        if correct {
+            currentScore += 1
+        }
+        
+        return correct
     }
 }

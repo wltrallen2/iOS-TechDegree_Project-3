@@ -281,29 +281,33 @@
                                 <color key="textColor" red="0.20392156859999999" green="0.56862745100000001" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_round_success" translatesAutoresizingMaskIntoConstraints="NO" id="hM8-95-451">
-                                <rect key="frame" x="67.5" y="558.5" width="240" height="53"/>
-                                <gestureRecognizers/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhD-gn-A6o">
+                                <rect key="frame" x="37.5" y="561.5" width="300" height="50"/>
+                                <color key="backgroundColor" red="0.33725490196078434" green="0.83921568627450982" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="lTB-o1-jgk"/>
-                                    <constraint firstAttribute="height" constant="53" id="nKa-BC-UbV"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZA5-5p-RRG"/>
+                                    <constraint firstAttribute="width" constant="300" id="hvT-45-vnM"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <state key="normal" title="✔︎  Next Round">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="CEv-AE-8Pc" appends="YES" id="B8x-94-gTu"/>
+                                    <action selector="nextRoundButtonTapped:" destination="q0f-7H-yO3" eventType="touchUpInside" id="xC1-w7-vNd"/>
                                 </connections>
-                            </imageView>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.16470588235294117" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hM8-95-451" firstAttribute="centerX" secondItem="8vT-1j-lp1" secondAttribute="centerX" id="Fto-MN-83I"/>
                             <constraint firstItem="HSJ-pi-KjI" firstAttribute="centerX" secondItem="8vT-1j-lp1" secondAttribute="centerX" id="IZK-2O-4wh"/>
+                            <constraint firstItem="ZhD-gn-A6o" firstAttribute="centerX" secondItem="8vT-1j-lp1" secondAttribute="centerX" id="J07-33-Ul7"/>
                             <constraint firstItem="eGt-MJ-sbZ" firstAttribute="leading" secondItem="1Nf-z2-Xfu" secondAttribute="leading" id="OPh-SL-fo7"/>
                             <constraint firstItem="1Nf-z2-Xfu" firstAttribute="trailing" secondItem="eGt-MJ-sbZ" secondAttribute="trailing" id="Rl6-c0-kUa"/>
                             <constraint firstItem="eGt-MJ-sbZ" firstAttribute="top" secondItem="1Nf-z2-Xfu" secondAttribute="top" id="b9o-l5-KPW"/>
+                            <constraint firstItem="HSJ-pi-KjI" firstAttribute="top" secondItem="ZhD-gn-A6o" secondAttribute="bottom" constant="10" id="cXV-Il-sPm"/>
                             <constraint firstItem="HSJ-pi-KjI" firstAttribute="top" secondItem="8VN-H5-feq" secondAttribute="bottom" id="dQS-pY-hKJ"/>
                             <constraint firstItem="1Nf-z2-Xfu" firstAttribute="bottom" secondItem="HSJ-pi-KjI" secondAttribute="bottom" constant="20" id="lvt-q2-NtD"/>
                             <constraint firstItem="8VN-H5-feq" firstAttribute="centerX" secondItem="8vT-1j-lp1" secondAttribute="centerX" id="n10-FQ-hnU"/>
-                            <constraint firstItem="HSJ-pi-KjI" firstAttribute="top" secondItem="hM8-95-451" secondAttribute="bottom" constant="10" id="paj-Pq-l6u"/>
                             <constraint firstItem="1Nf-z2-Xfu" firstAttribute="bottom" secondItem="eGt-MJ-sbZ" secondAttribute="bottom" constant="125" id="uxP-Dv-Nhj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Nf-z2-Xfu"/>
@@ -311,23 +315,19 @@
                     <connections>
                         <outlet property="collectionView" destination="eGt-MJ-sbZ" id="aoc-Ke-Fs4"/>
                         <outlet property="instructionLabel" destination="HSJ-pi-KjI" id="jJx-bd-rIi"/>
-                        <outlet property="nextRoundImageView" destination="hM8-95-451" id="Bjp-dh-L49"/>
+                        <outlet property="nextRoundButton" destination="ZhD-gn-A6o" id="fBE-ci-fQI"/>
                         <outlet property="timerLabel" destination="8VN-H5-feq" id="P77-qN-M47"/>
+                        <segue destination="JWn-wC-eLT" kind="presentation" identifier="presentScoreVC" id="Yv0-uq-R6v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJ7-QD-Jgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="CEv-AE-8Pc" userLabel="Next Round Tap Gesture Recognizer">
-                    <connections>
-                        <action selector="nextRoundImageTapped:" destination="q0f-7H-yO3" id="h0h-gC-EDu"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="896.79999999999995" y="26.53673163418291"/>
         </scene>
         <!--ScoreVC-->
         <scene sceneID="vC9-0t-pkd">
             <objects>
-                <viewController id="JWn-wC-eLT" customClass="ScoreVC" sceneMemberID="viewController">
+                <viewController id="JWn-wC-eLT" customClass="ScoreVC" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ebY-aW-Qjd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -343,7 +343,7 @@
                                     <outletCollection property="gestureRecognizers" destination="ZgK-Rc-7p1" appends="YES" id="8mg-UT-GSM"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Your Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9X-24-vh4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9X-24-vh4">
                                 <rect key="frame" x="138" y="257" width="99" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="0.20392156862745098" green="0.56862745098039214" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -362,6 +362,7 @@
                             <constraint firstItem="CfK-Ib-Br4" firstAttribute="bottom" secondItem="bYH-Tj-pw5" secondAttribute="bottom" constant="29" id="1le-LB-7gA"/>
                             <constraint firstItem="x9X-24-vh4" firstAttribute="centerX" secondItem="ebY-aW-Qjd" secondAttribute="centerX" id="CEG-WV-KcZ"/>
                             <constraint firstItem="Lxf-NQ-An5" firstAttribute="leading" secondItem="CfK-Ib-Br4" secondAttribute="leading" id="G4J-9T-3Gy"/>
+                            <constraint firstItem="Lxf-NQ-An5" firstAttribute="top" secondItem="x9X-24-vh4" secondAttribute="bottom" id="YOd-R5-rSr"/>
                             <constraint firstItem="bYH-Tj-pw5" firstAttribute="centerX" secondItem="ebY-aW-Qjd" secondAttribute="centerX" id="esd-CX-dZs"/>
                             <constraint firstItem="Lxf-NQ-An5" firstAttribute="centerY" secondItem="ebY-aW-Qjd" secondAttribute="centerY" id="fAl-xa-9HC"/>
                             <constraint firstItem="Lxf-NQ-An5" firstAttribute="centerX" secondItem="ebY-aW-Qjd" secondAttribute="centerX" id="h28-zW-lRg"/>
@@ -369,6 +370,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CfK-Ib-Br4"/>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="Lxf-NQ-An5" id="Ast-dz-o9a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBE-XO-H6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ZgK-Rc-7p1">
@@ -377,7 +381,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1704.8" y="26.600985221674879"/>
+            <point key="canvasLocation" x="1630" y="27"/>
         </scene>
         <!--WebVC-->
         <scene sceneID="8Kt-B8-rJS">
@@ -434,7 +438,6 @@
         <image name="down_full_selected" width="158" height="457"/>
         <image name="down_half" width="158" height="229"/>
         <image name="down_half_selected" width="158" height="229"/>
-        <image name="next_round_success" width="558" height="142"/>
         <image name="play_again" width="450" height="142"/>
         <image name="splash_screen" width="1333" height="2366"/>
         <image name="up_full" width="158" height="457"/>
