@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		3625A731224223D700DFB34E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3625A730224223D700DFB34E /* AppDelegate.swift */; };
 		3625A736224223D700DFB34E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3625A734224223D700DFB34E /* Main.storyboard */; };
-		3625A738224223D700DFB34E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3625A737224223D700DFB34E /* Assets.xcassets */; };
 		3625A73B224223D800DFB34E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3625A739224223D800DFB34E /* LaunchScreen.storyboard */; };
 		3625A743224223E800DFB34E /* Events.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3625A742224223E800DFB34E /* Events.plist */; };
+		364456DB225880160021C19C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364456DA225880160021C19C /* Assets.xcassets */; };
+		36683F3B2259D495003CBC59 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36683F3A2259D495003CBC59 /* WebKit.framework */; };
 		36844C8C22494BB1003E6BA9 /* ScoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36844C8B22494BB1003E6BA9 /* ScoreVC.swift */; };
 		36844C8E22494BC7003E6BA9 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36844C8D22494BC7003E6BA9 /* WebVC.swift */; };
 		36844C902249F510003E6BA9 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36844C8F2249F510003E6BA9 /* GameConstants.swift */; };
@@ -28,10 +29,11 @@
 		3625A72D224223D700DFB34E /* BoutTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoutTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3625A730224223D700DFB34E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3625A735224223D700DFB34E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3625A737224223D700DFB34E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3625A73A224223D800DFB34E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3625A73C224223D800DFB34E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3625A742224223E800DFB34E /* Events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Events.plist; sourceTree = "<group>"; };
+		364456DA225880160021C19C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		36683F3A2259D495003CBC59 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		36844C8B22494BB1003E6BA9 /* ScoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreVC.swift; sourceTree = "<group>"; };
 		36844C8D22494BC7003E6BA9 /* WebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		36844C8F2249F510003E6BA9 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36683F3B2259D495003CBC59 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +63,7 @@
 			children = (
 				3625A72F224223D700DFB34E /* BoutTime */,
 				3625A72E224223D700DFB34E /* Products */,
+				36683F392259D495003CBC59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,13 +85,21 @@
 				36844C8B22494BB1003E6BA9 /* ScoreVC.swift */,
 				36844C8D22494BC7003E6BA9 /* WebVC.swift */,
 				3625A734224223D700DFB34E /* Main.storyboard */,
-				3625A737224223D700DFB34E /* Assets.xcassets */,
 				3625A739224223D800DFB34E /* LaunchScreen.storyboard */,
+				364456DA225880160021C19C /* Assets.xcassets */,
 				3625A73C224223D800DFB34E /* Info.plist */,
 				3625A742224223E800DFB34E /* Events.plist */,
 				36C9FB7E22435E8000D8529D /* Model */,
 			);
 			path = BoutTime;
+			sourceTree = "<group>";
+		};
+		36683F392259D495003CBC59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36683F3A2259D495003CBC59 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		36C9FB7E22435E8000D8529D /* Model */ = {
@@ -161,8 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3625A73B224223D800DFB34E /* LaunchScreen.storyboard in Resources */,
-				3625A738224223D700DFB34E /* Assets.xcassets in Resources */,
 				3625A736224223D700DFB34E /* Main.storyboard in Resources */,
+				364456DB225880160021C19C /* Assets.xcassets in Resources */,
 				3625A743224223E800DFB34E /* Events.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,7 +273,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -316,7 +328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -330,6 +342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MV7733G8N3;
 				INFOPLIST_FILE = BoutTime/Info.plist;
@@ -339,8 +352,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FortySomethingNerd.BoutTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -348,6 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MV7733G8N3;
 				INFOPLIST_FILE = BoutTime/Info.plist;
@@ -357,8 +372,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FortySomethingNerd.BoutTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

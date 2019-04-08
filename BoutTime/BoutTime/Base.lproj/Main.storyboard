@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -281,46 +281,48 @@
                                 <color key="textColor" red="0.20392156859999999" green="0.56862745100000001" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhD-gn-A6o">
-                                <rect key="frame" x="37.5" y="561.5" width="300" height="50"/>
-                                <color key="backgroundColor" red="0.33725490196078434" green="0.83921568627450982" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_round_success" translatesAutoresizingMaskIntoConstraints="NO" id="keB-lT-ANB">
+                                <rect key="frame" x="85.5" y="559.5" width="204" height="52"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="ZA5-5p-RRG"/>
-                                    <constraint firstAttribute="width" constant="300" id="hvT-45-vnM"/>
+                                    <constraint firstAttribute="width" constant="204" id="eza-ij-qsy"/>
+                                    <constraint firstAttribute="height" constant="52" id="ze3-nq-mNT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <state key="normal" title="✔︎  Next Round">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
                                 <connections>
-                                    <action selector="nextRoundButtonTapped:" destination="q0f-7H-yO3" eventType="touchUpInside" id="xC1-w7-vNd"/>
+                                    <outletCollection property="gestureRecognizers" destination="xbe-22-EaD" appends="YES" id="kYi-jB-e9S"/>
                                 </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.16470588235294117" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="HSJ-pi-KjI" firstAttribute="centerX" secondItem="8vT-1j-lp1" secondAttribute="centerX" id="IZK-2O-4wh"/>
-                            <constraint firstItem="ZhD-gn-A6o" firstAttribute="centerX" secondItem="8vT-1j-lp1" secondAttribute="centerX" id="J07-33-Ul7"/>
                             <constraint firstItem="eGt-MJ-sbZ" firstAttribute="leading" secondItem="1Nf-z2-Xfu" secondAttribute="leading" id="OPh-SL-fo7"/>
                             <constraint firstItem="1Nf-z2-Xfu" firstAttribute="trailing" secondItem="eGt-MJ-sbZ" secondAttribute="trailing" id="Rl6-c0-kUa"/>
                             <constraint firstItem="eGt-MJ-sbZ" firstAttribute="top" secondItem="1Nf-z2-Xfu" secondAttribute="top" id="b9o-l5-KPW"/>
-                            <constraint firstItem="HSJ-pi-KjI" firstAttribute="top" secondItem="ZhD-gn-A6o" secondAttribute="bottom" constant="10" id="cXV-Il-sPm"/>
                             <constraint firstItem="HSJ-pi-KjI" firstAttribute="top" secondItem="8VN-H5-feq" secondAttribute="bottom" id="dQS-pY-hKJ"/>
                             <constraint firstItem="1Nf-z2-Xfu" firstAttribute="bottom" secondItem="HSJ-pi-KjI" secondAttribute="bottom" constant="20" id="lvt-q2-NtD"/>
                             <constraint firstItem="8VN-H5-feq" firstAttribute="centerX" secondItem="8vT-1j-lp1" secondAttribute="centerX" id="n10-FQ-hnU"/>
                             <constraint firstItem="1Nf-z2-Xfu" firstAttribute="bottom" secondItem="eGt-MJ-sbZ" secondAttribute="bottom" constant="125" id="uxP-Dv-Nhj"/>
+                            <constraint firstItem="keB-lT-ANB" firstAttribute="centerX" secondItem="8vT-1j-lp1" secondAttribute="centerX" id="vZ3-mI-ZJL"/>
+                            <constraint firstItem="HSJ-pi-KjI" firstAttribute="top" secondItem="keB-lT-ANB" secondAttribute="bottom" constant="10" id="yV0-Pk-3qc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Nf-z2-Xfu"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="eGt-MJ-sbZ" id="aoc-Ke-Fs4"/>
                         <outlet property="instructionLabel" destination="HSJ-pi-KjI" id="jJx-bd-rIi"/>
-                        <outlet property="nextRoundButton" destination="ZhD-gn-A6o" id="fBE-ci-fQI"/>
+                        <outlet property="nextRoundImageView" destination="keB-lT-ANB" id="4jc-Tm-f8p"/>
                         <outlet property="timerLabel" destination="8VN-H5-feq" id="P77-qN-M47"/>
                         <segue destination="JWn-wC-eLT" kind="presentation" identifier="presentScoreVC" id="Yv0-uq-R6v"/>
+                        <segue destination="EHJ-RO-RqN" kind="presentation" identifier="presentWebVC" id="IIa-wQ-pZI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJ7-QD-Jgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xbe-22-EaD">
+                    <connections>
+                        <action selector="nextRoundButtonTapped:" destination="q0f-7H-yO3" id="1A2-dn-jp9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="896.79999999999995" y="26.53673163418291"/>
         </scene>
@@ -386,12 +388,12 @@
         <!--WebVC-->
         <scene sceneID="8Kt-B8-rJS">
             <objects>
-                <viewController id="EHJ-RO-RqN" customClass="WebVC" sceneMemberID="viewController">
+                <viewController id="EHJ-RO-RqN" customClass="WebVC" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pnG-qx-WDn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="webview_bar" translatesAutoresizingMaskIntoConstraints="NO" id="UVk-bK-bza">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="webview_bar" translatesAutoresizingMaskIntoConstraints="NO" id="UVk-bK-bza">
                                 <rect key="frame" x="0.0" y="20" width="375" height="49"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -401,7 +403,7 @@
                                     <outletCollection property="gestureRecognizers" destination="ajb-Cn-JqN" appends="YES" id="SH1-dr-kzq"/>
                                 </connections>
                             </imageView>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZQ-Rw-i8B">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGQ-Fn-zx0">
                                 <rect key="frame" x="0.0" y="69" width="375" height="598"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -414,14 +416,17 @@
                         <constraints>
                             <constraint firstItem="UVk-bK-bza" firstAttribute="trailing" secondItem="2nE-ce-2mJ" secondAttribute="trailing" id="0cx-AQ-bcp"/>
                             <constraint firstItem="UVk-bK-bza" firstAttribute="leading" secondItem="2nE-ce-2mJ" secondAttribute="leading" id="M3U-h3-b7o"/>
-                            <constraint firstItem="IZQ-Rw-i8B" firstAttribute="bottom" secondItem="2nE-ce-2mJ" secondAttribute="bottom" id="U9g-bg-bC8"/>
-                            <constraint firstItem="IZQ-Rw-i8B" firstAttribute="top" secondItem="UVk-bK-bza" secondAttribute="bottom" id="pAg-AM-gJR"/>
+                            <constraint firstItem="bGQ-Fn-zx0" firstAttribute="leading" secondItem="2nE-ce-2mJ" secondAttribute="leading" id="Ro9-1S-Ggl"/>
+                            <constraint firstItem="bGQ-Fn-zx0" firstAttribute="top" secondItem="UVk-bK-bza" secondAttribute="bottom" id="TJJ-cQ-h0X"/>
+                            <constraint firstItem="2nE-ce-2mJ" firstAttribute="trailing" secondItem="bGQ-Fn-zx0" secondAttribute="trailing" id="oZn-kL-qsp"/>
+                            <constraint firstItem="2nE-ce-2mJ" firstAttribute="bottom" secondItem="bGQ-Fn-zx0" secondAttribute="bottom" id="q9u-LV-BTj"/>
                             <constraint firstItem="UVk-bK-bza" firstAttribute="top" secondItem="2nE-ce-2mJ" secondAttribute="top" id="uag-72-XzR"/>
-                            <constraint firstItem="IZQ-Rw-i8B" firstAttribute="trailing" secondItem="2nE-ce-2mJ" secondAttribute="trailing" id="wO1-GT-r6X"/>
-                            <constraint firstItem="IZQ-Rw-i8B" firstAttribute="leading" secondItem="2nE-ce-2mJ" secondAttribute="leading" id="zdD-4V-duR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2nE-ce-2mJ"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="bGQ-Fn-zx0" id="cH8-DN-yjT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v19-K5-kFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ajb-Cn-JqN" userLabel="Web Bar Tap Gesture Recognizer">
@@ -438,6 +443,7 @@
         <image name="down_full_selected" width="158" height="457"/>
         <image name="down_half" width="158" height="229"/>
         <image name="down_half_selected" width="158" height="229"/>
+        <image name="next_round_success" width="558" height="142"/>
         <image name="play_again" width="450" height="142"/>
         <image name="splash_screen" width="1333" height="2366"/>
         <image name="up_full" width="158" height="457"/>

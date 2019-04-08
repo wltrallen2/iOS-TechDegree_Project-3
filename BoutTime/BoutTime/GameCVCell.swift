@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+/// The GameCVCell class represents a GameCV cell and includes properties connected to the cell's title label, up and down arrow image views, and the event instance assigned to the cell.
 class GameCVCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -16,51 +16,4 @@ class GameCVCell: UICollectionViewCell {
     @IBOutlet weak var downArrowImageView: UIImageView!
     
     var event: Event?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    func setForTwoArrows() {
-        downArrowImageView.addConstraint(getHalfHeightConstraint(forItem: downArrowImageView))
-        upArrowImageView.addConstraint(getHalfHeightConstraint(forItem: upArrowImageView))
-    }
-    
-    func removeUpArrow() {
-        upArrowImageView.removeFromSuperview()
-        downArrowImageView.image = UIImage(named: "down_full")
-        downArrowImageView.addConstraint(getFullHeightConstraint(forItem: downArrowImageView))
-    }
-    
-    func removeDownArrow() {
-        downArrowImageView.removeFromSuperview()
-        upArrowImageView.image = UIImage(named: "up_full")
-        upArrowImageView.addConstraint(getFullHeightConstraint(forItem: upArrowImageView))
-    }
-    
-    func getHalfHeightConstraint(forItem item: Any) -> NSLayoutConstraint {
-        return NSLayoutConstraint(item: item,
-                                  attribute: .height,
-                                  relatedBy: .equal,
-                                  toItem: item,
-                                  attribute: .width,
-                                  multiplier: 1.0 / 1.0,
-                                  constant: 0)
-    }
-    
-    func getFullHeightConstraint(forItem item: Any) -> NSLayoutConstraint {
-        return NSLayoutConstraint(item: item,
-                                  attribute: .height,
-                                  relatedBy: .equal,
-                                  toItem: item,
-                                  attribute: .width,
-                                  multiplier: 2.0 / 1.0,
-                                  constant: 0)
-
-    }
-
 }

@@ -5,7 +5,7 @@
 	<key>2018</key>
 	<dict>
 		<key>date</key>
-		<integer>2018</integer>
+		<date>2017-11-10T02:00:00Z</date>
 		<key>title</key>
 		<string>The Band&apos;s Visit</string>
 		<key>url</key>
@@ -14,7 +14,7 @@
 	<key>2017</key>
 	<dict>
 		<key>date</key>
-		<integer>2017</integer>
+		<date>2016-11-15T02:00:00Z</date>
 		<key>title</key>
 		<string>Dear Evan Hansen</string>
 		<key>url</key>
@@ -23,7 +23,7 @@
 	<key>2016</key>
 	<dict>
 		<key>date</key>
-		<integer>2016</integer>
+		<date>2015-07-14T01:00:00Z</date>
 		<key>title</key>
 		<string>Hamilton</string>
 		<key>url</key>
@@ -32,7 +32,7 @@
 	<key>2015</key>
 	<dict>
 		<key>date</key>
-		<integer>2015</integer>
+		<date>2015-04-20T01:00:00Z</date>
 		<key>title</key>
 		<string>Fun Home</string>
 		<key>url</key>
@@ -41,7 +41,7 @@
 	<key>2014</key>
 	<dict>
 		<key>date</key>
-		<integer>2014</integer>
+		<date>2013-11-18T02:00:00Z</date>
 		<key>title</key>
 		<string>A Gentleman&apos;s Guide to Love and Murder</string>
 		<key>url</key>
@@ -50,7 +50,7 @@
 	<key>2013</key>
 	<dict>
 		<key>date</key>
-		<integer>2013</integer>
+		<date>2013-04-05T01:00:00Z</date>
 		<key>title</key>
 		<string>Kinky Boots</string>
 		<key>url</key>
@@ -59,7 +59,7 @@
 	<key>2012</key>
 	<dict>
 		<key>date</key>
-		<integer>2012</integer>
+		<date>2012-03-19T01:00:00Z</date>
 		<key>title</key>
 		<string>Once</string>
 		<key>url</key>
@@ -68,7 +68,7 @@
 	<key>2011</key>
 	<dict>
 		<key>date</key>
-		<integer>2011</integer>
+		<date>2011-03-25T01:00:00Z</date>
 		<key>title</key>
 		<string>The Book of Mormon</string>
 		<key>url</key>
@@ -77,7 +77,7 @@
 	<key>2010</key>
 	<dict>
 		<key>date</key>
-		<integer>2010</integer>
+		<date>2009-10-20T01:00:00Z</date>
 		<key>title</key>
 		<string>Memphis</string>
 		<key>url</key>
@@ -86,7 +86,7 @@
 	<key>2009</key>
 	<dict>
 		<key>date</key>
-		<integer>2009</integer>
+		<date>2008-11-14T02:00:00Z</date>
 		<key>title</key>
 		<string>Billy Elliot the Musical</string>
 		<key>url</key>
@@ -95,7 +95,7 @@
 	<key>2008</key>
 	<dict>
 		<key>date</key>
-		<integer>2008</integer>
+		<date>2008-03-10T01:00:00Z</date>
 		<key>title</key>
 		<string>In the Heights</string>
 		<key>url</key>
@@ -104,7 +104,7 @@
 	<key>2007</key>
 	<dict>
 		<key>date</key>
-		<integer>2007</integer>
+		<date>2006-12-11T02:00:00Z</date>
 		<key>title</key>
 		<string>Spring Awakening</string>
 		<key>url</key>
@@ -113,7 +113,7 @@
 	<key>2006</key>
 	<dict>
 		<key>date</key>
-		<integer>2006</integer>
+		<date>2005-11-07T02:00:00Z</date>
 		<key>title</key>
 		<string>Jersey Boys</string>
 		<key>url</key>
@@ -122,7 +122,7 @@
 	<key>2005</key>
 	<dict>
 		<key>date</key>
-		<integer>2005</integer>
+		<date>2005-03-18T02:00:00Z</date>
 		<key>title</key>
 		<string>Spamalot</string>
 		<key>url</key>
@@ -131,7 +131,7 @@
 	<key>2004</key>
 	<dict>
 		<key>date</key>
-		<integer>2004</integer>
+		<date>2003-08-01T01:00:00Z</date>
 		<key>title</key>
 		<string>Avenue Q</string>
 		<key>url</key>
@@ -140,7 +140,7 @@
 	<key>2003</key>
 	<dict>
 		<key>date</key>
-		<integer>2003</integer>
+		<date>2002-08-16T01:00:00Z</date>
 		<key>title</key>
 		<string>Hairspray</string>
 		<key>url</key>
@@ -149,7 +149,7 @@
 	<key>2002</key>
 	<dict>
 		<key>date</key>
-		<integer>2002</integer>
+		<date>2002-04-19T01:00:00Z</date>
 		<key>title</key>
 		<string>Thoroughly Modern Millie</string>
 		<key>url</key>
@@ -158,7 +158,7 @@
 	<key>2001</key>
 	<dict>
 		<key>date</key>
-		<integer>2001</integer>
+		<date>2001-04-20T01:00:00Z</date>
 		<key>title</key>
 		<string>The Producers</string>
 		<key>url</key>
@@ -167,7 +167,7 @@
 	<key>2000</key>
 	<dict>
 		<key>date</key>
-		<integer>2000</integer>
+		<date>2000-03-31T02:00:00Z</date>
 		<key>title</key>
 		<string>Contact</string>
 		<key>url</key>
@@ -176,7 +176,7 @@
 	<key>1999</key>
 	<dict>
 		<key>date</key>
-		<integer>1999</integer>
+		<date>1999-01-15T02:00:00Z</date>
 		<key>title</key>
 		<string>Fosse</string>
 		<key>url</key>
@@ -185,7 +185,7 @@
 	<key>1998</key>
 	<dict>
 		<key>date</key>
-		<integer>1998</integer>
+		<date>1997-11-14T02:00:00Z</date>
 		<key>title</key>
 		<string>The Lion King</string>
 		<key>url</key>
@@ -194,7 +194,7 @@
 	<key>1997</key>
 	<dict>
 		<key>date</key>
-		<integer>1997</integer>
+		<date>1997-04-24T01:00:00Z</date>
 		<key>title</key>
 		<string>Titanic</string>
 		<key>url</key>
@@ -203,7 +203,7 @@
 	<key>1996</key>
 	<dict>
 		<key>date</key>
-		<integer>1996</integer>
+		<date>1996-04-30T01:00:00Z</date>
 		<key>title</key>
 		<string>Rent</string>
 		<key>url</key>
@@ -212,7 +212,7 @@
 	<key>1995</key>
 	<dict>
 		<key>date</key>
-		<integer>1995</integer>
+		<date>1994-11-18T02:00:00Z</date>
 		<key>title</key>
 		<string>Sunset Boulevard</string>
 		<key>url</key>
@@ -221,7 +221,7 @@
 	<key>1994</key>
 	<dict>
 		<key>date</key>
-		<integer>1994</integer>
+		<date>1994-05-10T01:00:00Z</date>
 		<key>title</key>
 		<string>Passion</string>
 		<key>url</key>
@@ -230,7 +230,7 @@
 	<key>1993</key>
 	<dict>
 		<key>date</key>
-		<integer>1993</integer>
+		<date>1993-05-04T01:00:00Z</date>
 		<key>title</key>
 		<string>Kiss of the Spider Woman</string>
 		<key>url</key>
@@ -239,7 +239,7 @@
 	<key>1992</key>
 	<dict>
 		<key>date</key>
-		<integer>1992</integer>
+		<date>1992-02-20T02:00:00Z</date>
 		<key>title</key>
 		<string>Crazy for You</string>
 		<key>url</key>
@@ -248,7 +248,7 @@
 	<key>1991</key>
 	<dict>
 		<key>date</key>
-		<integer>1991</integer>
+		<date>1991-05-02T01:00:00Z</date>
 		<key>title</key>
 		<string>The Will Rogers Follies</string>
 		<key>url</key>
@@ -257,7 +257,7 @@
 	<key>1990</key>
 	<dict>
 		<key>date</key>
-		<integer>1990</integer>
+		<date>1989-12-12T02:00:00Z</date>
 		<key>title</key>
 		<string>City of Angels</string>
 		<key>url</key>
@@ -266,7 +266,7 @@
 	<key>1989</key>
 	<dict>
 		<key>date</key>
-		<integer>1989</integer>
+		<date>1989-02-27T02:00:00Z</date>
 		<key>title</key>
 		<string>Jerome Robbins&apos; Broadway</string>
 		<key>url</key>
@@ -275,7 +275,7 @@
 	<key>1988</key>
 	<dict>
 		<key>date</key>
-		<integer>1988</integer>
+		<date>1988-01-27T02:00:00Z</date>
 		<key>title</key>
 		<string>The Phantom of the Opera</string>
 		<key>url</key>
@@ -284,7 +284,7 @@
 	<key>1987</key>
 	<dict>
 		<key>date</key>
-		<integer>1987</integer>
+		<date>1987-03-13T02:00:00Z</date>
 		<key>title</key>
 		<string>Les Miserables</string>
 		<key>url</key>
@@ -293,7 +293,7 @@
 	<key>1986</key>
 	<dict>
 		<key>date</key>
-		<integer>1986</integer>
+		<date>1985-12-03T02:00:00Z</date>
 		<key>title</key>
 		<string>The Mystery of Edwin Drood</string>
 		<key>url</key>
@@ -302,7 +302,7 @@
 	<key>1985</key>
 	<dict>
 		<key>date</key>
-		<integer>1985</integer>
+		<date>1985-04-26T02:00:00Z</date>
 		<key>title</key>
 		<string>Big River</string>
 		<key>url</key>
@@ -311,7 +311,7 @@
 	<key>1984</key>
 	<dict>
 		<key>date</key>
-		<integer>1984</integer>
+		<date>1983-08-22T01:00:00Z</date>
 		<key>title</key>
 		<string>La Cage aux Folles</string>
 		<key>url</key>
@@ -320,7 +320,7 @@
 	<key>1983</key>
 	<dict>
 		<key>date</key>
-		<integer>1983</integer>
+		<date>1982-10-08T01:00:00Z</date>
 		<key>title</key>
 		<string>Cats</string>
 		<key>url</key>
@@ -329,7 +329,7 @@
 	<key>1982</key>
 	<dict>
 		<key>date</key>
-		<integer>1982</integer>
+		<date>1982-05-10T01:00:00Z</date>
 		<key>title</key>
 		<string>Nine</string>
 		<key>url</key>
@@ -338,7 +338,7 @@
 	<key>1981</key>
 	<dict>
 		<key>date</key>
-		<integer>1981</integer>
+		<date>1980-08-26T01:00:00Z</date>
 		<key>title</key>
 		<string>42nd Street</string>
 		<key>url</key>
@@ -347,7 +347,7 @@
 	<key>1980</key>
 	<dict>
 		<key>date</key>
-		<integer>1980</integer>
+		<date>1979-09-26T01:00:00Z</date>
 		<key>title</key>
 		<string>Evita</string>
 		<key>url</key>
@@ -356,7 +356,7 @@
 	<key>1979</key>
 	<dict>
 		<key>date</key>
-		<integer>1979</integer>
+		<date>1979-03-02T02:00:00Z</date>
 		<key>title</key>
 		<string>Sweeney Todd</string>
 		<key>url</key>
@@ -365,7 +365,7 @@
 	<key>1978</key>
 	<dict>
 		<key>date</key>
-		<integer>1978</integer>
+		<date>1978-05-10T01:00:00Z</date>
 		<key>title</key>
 		<string>Ain&apos;t Misbehavin&apos;</string>
 		<key>url</key>
@@ -374,7 +374,7 @@
 	<key>1977</key>
 	<dict>
 		<key>date</key>
-		<integer>1977</integer>
+		<date>1977-04-22T02:00:00Z</date>
 		<key>title</key>
 		<string>Annie</string>
 		<key>url</key>
@@ -383,7 +383,7 @@
 	<key>1976</key>
 	<dict>
 		<key>date</key>
-		<integer>1976</integer>
+		<date>1975-07-26T01:00:00Z</date>
 		<key>title</key>
 		<string>A Chorus Line</string>
 		<key>url</key>
@@ -392,7 +392,7 @@
 	<key>1975</key>
 	<dict>
 		<key>date</key>
-		<integer>1975</integer>
+		<date>1975-01-06T02:00:00Z</date>
 		<key>title</key>
 		<string>The Wiz</string>
 		<key>url</key>
@@ -401,7 +401,7 @@
 	<key>1974</key>
 	<dict>
 		<key>date</key>
-		<integer>1974</integer>
+		<date>1973-10-19T01:00:00Z</date>
 		<key>title</key>
 		<string>Raisin</string>
 		<key>url</key>
@@ -410,7 +410,7 @@
 	<key>1973</key>
 	<dict>
 		<key>date</key>
-		<integer>1973</integer>
+		<date>1973-02-26T02:00:00Z</date>
 		<key>title</key>
 		<string>A Little Night Music</string>
 		<key>url</key>
@@ -419,7 +419,7 @@
 	<key>1972</key>
 	<dict>
 		<key>date</key>
-		<integer>1972</integer>
+		<date>1971-12-02T02:00:00Z</date>
 		<key>title</key>
 		<string>Two Gentlemen of Verona</string>
 		<key>url</key>
@@ -428,7 +428,7 @@
 	<key>1971</key>
 	<dict>
 		<key>date</key>
-		<integer>1971</integer>
+		<date>1970-04-27T01:00:00Z</date>
 		<key>title</key>
 		<string>Company</string>
 		<key>url</key>
@@ -437,7 +437,7 @@
 	<key>1970</key>
 	<dict>
 		<key>date</key>
-		<integer>1970</integer>
+		<date>1970-03-31T02:00:00Z</date>
 		<key>title</key>
 		<string>Applause</string>
 		<key>url</key>
@@ -446,7 +446,7 @@
 	<key>1969</key>
 	<dict>
 		<key>date</key>
-		<integer>1969</integer>
+		<date>1969-03-17T02:00:00Z</date>
 		<key>title</key>
 		<string>1776</string>
 		<key>url</key>
@@ -455,7 +455,7 @@
 	<key>1968</key>
 	<dict>
 		<key>date</key>
-		<integer>1968</integer>
+		<date>1967-04-27T02:00:00Z</date>
 		<key>title</key>
 		<string>Hallelujah, Baby!</string>
 		<key>url</key>
@@ -464,7 +464,7 @@
 	<key>1967</key>
 	<dict>
 		<key>date</key>
-		<integer>1967</integer>
+		<date>1966-11-21T02:00:00Z</date>
 		<key>title</key>
 		<string>Cabaret</string>
 		<key>url</key>
@@ -473,7 +473,7 @@
 	<key>1966</key>
 	<dict>
 		<key>date</key>
-		<integer>1966</integer>
+		<date>1965-11-23T02:00:00Z</date>
 		<key>title</key>
 		<string>Man of La Mancha</string>
 		<key>url</key>
@@ -482,7 +482,7 @@
 	<key>1965</key>
 	<dict>
 		<key>date</key>
-		<integer>1965</integer>
+		<date>1964-09-23T01:00:00Z</date>
 		<key>title</key>
 		<string>Fiddler on the Roof</string>
 		<key>url</key>
@@ -491,7 +491,7 @@
 	<key>1964</key>
 	<dict>
 		<key>date</key>
-		<integer>1964</integer>
+		<date>1964-01-17T02:00:00Z</date>
 		<key>title</key>
 		<string>Hello, Dolly!</string>
 		<key>url</key>
@@ -500,7 +500,7 @@
 	<key>1963</key>
 	<dict>
 		<key>date</key>
-		<integer>1963</integer>
+		<date>1962-05-09T01:00:00Z</date>
 		<key>title</key>
 		<string>A Funny Thing Happened on the Way to the Forum</string>
 		<key>url</key>
@@ -509,7 +509,7 @@
 	<key>1962</key>
 	<dict>
 		<key>date</key>
-		<integer>1962</integer>
+		<date>1961-10-15T01:00:00Z</date>
 		<key>title</key>
 		<string>How to Succeed in Business Without Really Trying</string>
 		<key>url</key>
@@ -518,7 +518,7 @@
 	<key>1961</key>
 	<dict>
 		<key>date</key>
-		<integer>1961</integer>
+		<date>1960-04-15T02:00:00Z</date>
 		<key>title</key>
 		<string>Bye, Bye, Birdie</string>
 		<key>url</key>
@@ -527,7 +527,7 @@
 	<key>1960</key>
 	<dict>
 		<key>date</key>
-		<integer>1960</integer>
+		<date>1959-11-17T02:00:00Z</date>
 		<key>title</key>
 		<string>The Sound of Music</string>
 		<key>url</key>
@@ -536,7 +536,7 @@
 	<key>1959</key>
 	<dict>
 		<key>date</key>
-		<integer>1959</integer>
+		<date>1959-02-06T02:00:00Z</date>
 		<key>title</key>
 		<string>Redhead</string>
 		<key>url</key>

@@ -8,16 +8,21 @@
 
 import Foundation
 
+// MARK: - Enum
+//**********************************************************************
+/// An enum representing the three parts of an Event: the title, the date, and the url.
 enum EventItem : String {
     case title
     case date
     case url
 }
 
-//FIXME: Update plist and Event struct so that date is a Date object, not just an Int.
+// MARK: - Struct
+//**********************************************************************
+// A struct representing an Event, containing a description (or title), a date, and a url. Events are comparable by date.
 struct Event: Comparable {
     let description: String
-    let date: Int
+    let date: Date
     let url: URL
     
     static func < (lhs: Event, rhs: Event) -> Bool {

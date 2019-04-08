@@ -7,29 +7,35 @@
 //
 
 import UIKit
+import WebKit
 
-class WebVC: UIViewController {
+/// The WebVC class represents the view controller that contains a WKWebView used to display a web page based on a given url.
+class WebVC: UIViewController, WKUIDelegate {
 
+    /// Property representing the url to load
+    var urlToLoad: URL?
+    
+    /// Property representing the WKWebView that will display the web page
+    @IBOutlet weak var webView: WKWebView!
+    
+    // MARK: - Life Cycle Methods
+    //**********************************************************************
+    /// Once the view is loaded, the method will send a request to load url in the urlToLoad property, which should be set during the segue.
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let url = urlToLoad {
+            let urlRequest = URLRequest(url: url)
+            self.webView.load(urlRequest)
+        }
+        
     }
     
     // MARK: - Action Methods
-    
+    //**********************************************************************
+    /// When the webBarImage is tapped, this method dismisses this view controller.
     @IBAction func webBarImageTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
