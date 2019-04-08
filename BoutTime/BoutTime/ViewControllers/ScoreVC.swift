@@ -11,6 +11,11 @@ import UIKit
 /// The ScoreVC class represents the view controller that controls the views responsible for displaying the player's score and for prompting the user to play again.
 class ScoreVC: UIViewController {
     
+    /// Overrides the preferred status bar style and sets as light content
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     // Property representing the score that will be presented to the player
     var scoreToPresent: String = ""
     

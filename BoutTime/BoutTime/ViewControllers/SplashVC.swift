@@ -14,6 +14,11 @@ class SplashVC: UIViewController {
     /// IBOutlet Property connected to the play button
     @IBOutlet weak var playButton: UIButton!
     
+    /// Overrides the preferred status bar style and sets as light content
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - Life Cycle Methods
     //**********************************************************************
     /// After loading, this method will set the corner radius for the play button to create a rounded rectangle.

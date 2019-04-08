@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 // MARK: - Private Constants
 //**********************************************************************
@@ -25,6 +26,10 @@ fileprivate let wrongImageName = "next_round_fail"
 fileprivate let correctImageNameForEnd = "see_final_score_success"
 fileprivate let wrongImageNameForEnd = "see_final_score_fail"
 
+/// Audio File Name Constants
+fileprivate let correctDing = "CorrectDing"
+fileprivate let incorrectBuzz = "IncorrectBuzz"
+
 /// Collection View Flow Layout Constants
 fileprivate let collectionViewFlowLayoutPadding: CGFloat = 10
 fileprivate let collectionViewFlowLayoutSpacing: CGFloat = 10
@@ -34,6 +39,11 @@ fileprivate let collectionViewFlowLayoutSpacing: CGFloat = 10
 //**********************************************************************
 /// The GameVC class controls the visual representation of the Game object. This class is the Data Source and Delegate for the UICollectionView that it contains. Additionally, it is the Delegate for the UICollectionViewFlowLayout.
 class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+    /// Overrides the preferred status bar style and sets as light content
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     // MARK: - IBOutlet Properties
     //**********************************************************************
@@ -195,8 +205,10 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             var imageName: String
             if correct {
                 imageName = (hasNextRound ? correctImageName : correctImageNameForEnd)
+                GameSound(forResource: correctDing, ofType: ".wav").play()
             } else {
                 imageName = (hasNextRound ? wrongImageName : wrongImageNameForEnd)
+                GameSound(forResource: incorrectBuzz, ofType: ".wav").play()
             }
             
             nextRoundImageView.image = UIImage(named: imageName)

@@ -13,6 +13,9 @@
 		3625A743224223E800DFB34E /* Events.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3625A742224223E800DFB34E /* Events.plist */; };
 		364456DB225880160021C19C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364456DA225880160021C19C /* Assets.xcassets */; };
 		36683F3B2259D495003CBC59 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36683F3A2259D495003CBC59 /* WebKit.framework */; };
+		36683F44225BC5AB003CBC59 /* IncorrectBuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36683F42225BC5AB003CBC59 /* IncorrectBuzz.wav */; };
+		36683F45225BC5AB003CBC59 /* CorrectDing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36683F43225BC5AB003CBC59 /* CorrectDing.wav */; };
+		36683F47225BDDFE003CBC59 /* GameSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36683F46225BDDFE003CBC59 /* GameSound.swift */; };
 		36844C8C22494BB1003E6BA9 /* ScoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36844C8B22494BB1003E6BA9 /* ScoreVC.swift */; };
 		36844C8E22494BC7003E6BA9 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36844C8D22494BC7003E6BA9 /* WebVC.swift */; };
 		36844C902249F510003E6BA9 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36844C8F2249F510003E6BA9 /* GameConstants.swift */; };
@@ -34,6 +37,10 @@
 		3625A742224223E800DFB34E /* Events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Events.plist; sourceTree = "<group>"; };
 		364456DA225880160021C19C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36683F3A2259D495003CBC59 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		36683F40225BC592003CBC59 /* IncorrectBuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = IncorrectBuzz.wav; path = BoutTime/IncorrectBuzz.wav; sourceTree = "<group>"; };
+		36683F42225BC5AB003CBC59 /* IncorrectBuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IncorrectBuzz.wav; sourceTree = "<group>"; };
+		36683F43225BC5AB003CBC59 /* CorrectDing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CorrectDing.wav; sourceTree = "<group>"; };
+		36683F46225BDDFE003CBC59 /* GameSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSound.swift; sourceTree = "<group>"; };
 		36844C8B22494BB1003E6BA9 /* ScoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreVC.swift; sourceTree = "<group>"; };
 		36844C8D22494BC7003E6BA9 /* WebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		36844C8F2249F510003E6BA9 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
@@ -79,17 +86,13 @@
 			isa = PBXGroup;
 			children = (
 				3625A730224223D700DFB34E /* AppDelegate.swift */,
-				36C9FB7F2247418300D8529D /* SplashVC.swift */,
-				36C9FB8922488F0600D8529D /* GameVC.swift */,
-				36C9FB8B22488F9A00D8529D /* GameCVCell.swift */,
-				36844C8B22494BB1003E6BA9 /* ScoreVC.swift */,
-				36844C8D22494BC7003E6BA9 /* WebVC.swift */,
-				3625A734224223D700DFB34E /* Main.storyboard */,
-				3625A739224223D800DFB34E /* LaunchScreen.storyboard */,
+				36683F4A225BE655003CBC59 /* Storyboards */,
+				36683F49225BDF38003CBC59 /* ViewControllers */,
+				36683F48225BDF2D003CBC59 /* Audio */,
+				36C9FB7E22435E8000D8529D /* Model */,
 				364456DA225880160021C19C /* Assets.xcassets */,
 				3625A73C224223D800DFB34E /* Info.plist */,
 				3625A742224223E800DFB34E /* Events.plist */,
-				36C9FB7E22435E8000D8529D /* Model */,
 			);
 			path = BoutTime;
 			sourceTree = "<group>";
@@ -97,9 +100,41 @@
 		36683F392259D495003CBC59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36683F40225BC592003CBC59 /* IncorrectBuzz.wav */,
 				36683F3A2259D495003CBC59 /* WebKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36683F48225BDF2D003CBC59 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				36683F46225BDDFE003CBC59 /* GameSound.swift */,
+				36683F43225BC5AB003CBC59 /* CorrectDing.wav */,
+				36683F42225BC5AB003CBC59 /* IncorrectBuzz.wav */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		36683F49225BDF38003CBC59 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				36C9FB7F2247418300D8529D /* SplashVC.swift */,
+				36C9FB8922488F0600D8529D /* GameVC.swift */,
+				36C9FB8B22488F9A00D8529D /* GameCVCell.swift */,
+				36844C8B22494BB1003E6BA9 /* ScoreVC.swift */,
+				36844C8D22494BC7003E6BA9 /* WebVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		36683F4A225BE655003CBC59 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3625A734224223D700DFB34E /* Main.storyboard */,
+				3625A739224223D800DFB34E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		36C9FB7E22435E8000D8529D /* Model */ = {
@@ -146,6 +181,7 @@
 				TargetAttributes = {
 					3625A72C224223D700DFB34E = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -174,7 +210,9 @@
 			files = (
 				3625A73B224223D800DFB34E /* LaunchScreen.storyboard in Resources */,
 				3625A736224223D700DFB34E /* Main.storyboard in Resources */,
+				36683F44225BC5AB003CBC59 /* IncorrectBuzz.wav in Resources */,
 				364456DB225880160021C19C /* Assets.xcassets in Resources */,
+				36683F45225BC5AB003CBC59 /* CorrectDing.wav in Resources */,
 				3625A743224223E800DFB34E /* Events.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +233,7 @@
 				36C9FB77224355C500D8529D /* EventDataLoader.swift in Sources */,
 				36844C902249F510003E6BA9 /* GameConstants.swift in Sources */,
 				36844C8E22494BC7003E6BA9 /* WebVC.swift in Sources */,
+				36683F47225BDDFE003CBC59 /* GameSound.swift in Sources */,
 				36C9FB8C22488F9A00D8529D /* GameCVCell.swift in Sources */,
 				36C9FB802247418300D8529D /* SplashVC.swift in Sources */,
 			);
@@ -353,7 +392,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FortySomethingNerd.BoutTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -373,7 +412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FortySomethingNerd.BoutTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
