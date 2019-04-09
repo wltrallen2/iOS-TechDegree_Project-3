@@ -9,32 +9,6 @@
 import UIKit
 import AVFoundation
 
-// MARK: - Private Constants
-//**********************************************************************
-/// Reuse Identifier Constants for Cell Dequeuing
-fileprivate let reuseIdentifierForSingleUpArrow = "GameCVCellSingleUp"
-fileprivate let reuseIdentifierForSingleDownArrow = "GameCVCellSingleDown"
-fileprivate let reuseIdentifierForDoubleArrow = "GameCVCellDouble"
-
-/// Segue Identifier Constants
-fileprivate let presentScoreVCIdentifier = "presentScoreVC"
-fileprivate let presentWebVCIdentifier = "presentWebVC"
-
-/// Image Name Constants
-fileprivate let correctImageName = "next_round_success"
-fileprivate let wrongImageName = "next_round_fail"
-fileprivate let correctImageNameForEnd = "see_final_score_success"
-fileprivate let wrongImageNameForEnd = "see_final_score_fail"
-
-/// Audio File Name Constants
-fileprivate let correctDing = "CorrectDing"
-fileprivate let incorrectBuzz = "IncorrectBuzz"
-
-/// Collection View Flow Layout Constants
-fileprivate let collectionViewFlowLayoutPadding: CGFloat = 10
-fileprivate let collectionViewFlowLayoutSpacing: CGFloat = 10
-
-
 // MARK: - GameVC Class
 //**********************************************************************
 /// The GameVC class controls the visual representation of the Game object. This class is the Data Source and Delegate for the UICollectionView that it contains. Additionally, it is the Delegate for the UICollectionViewFlowLayout.
@@ -317,4 +291,31 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             timerLabel.text = "\(leadString)\(numSecondsLeft)"
         }
     }
+    
+    // MARK: - Class Constants
+    //**********************************************************************
+    /// These constants are stored as computed properties for stylistic preferences.
+    
+    /// Reuse Identifier Constants for Cell Dequeuing
+    var reuseIdentifierForSingleUpArrow: String { return "GameCVCellSingleUp" }
+    var reuseIdentifierForSingleDownArrow: String { return "GameCVCellSingleDown" }
+    var reuseIdentifierForDoubleArrow: String { return "GameCVCellDouble" }
+    
+    /// Segue Identifier Constants
+    var presentScoreVCIdentifier: String { return "presentScoreVC" }
+    var presentWebVCIdentifier: String { return "presentWebVC" }
+    
+    /// Image Name Constants
+    var correctImageName: String { return "next_round_success" }
+    var wrongImageName: String { return "next_round_fail" }
+    var correctImageNameForEnd: String { return "see_final_score_success" }
+    var wrongImageNameForEnd: String { return "see_final_score_fail" }
+    
+    /// Audio File Name Constants
+    var correctDing: String { return "CorrectDing" }
+    var incorrectBuzz: String { return "IncorrectBuzz" }
+    
+    /// Collection View Flow Layout Constants
+    var collectionViewFlowLayoutPadding: CGFloat { return 10 }
+    var collectionViewFlowLayoutSpacing: CGFloat { return 10 }
 }
