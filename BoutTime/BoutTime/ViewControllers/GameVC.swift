@@ -111,7 +111,15 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             }
         }
     }
-
+    
+    /// Unwinds to this view controller and, if unwinding from a ScoreVC instance, starts a new game.
+    @IBAction func unwindToGameVC(_ unwindSegue: UIStoryboardSegue) {
+        if unwindSegue.source is ScoreVC {
+            startGame()
+            startRound()
+        }
+    }
+    
     // MARK: - Shake Gesture Methods
     //**********************************************************************
     /// This method is called when the device stops shaking, and if the round is still active (i.e. there is still time left), the method will check the current answer and end the round.
@@ -141,7 +149,10 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         }
 
         // Dequeue a GameCVCell
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? GameCVCell else { fatalError() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? GameCVCell else {
+            present(UIAlertController.fatalAlertController(), animated: true, completion: nil)
+            fatalError()
+        }
 
         // Assign a tapGestureRecognizer to the titleLabel.
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
@@ -262,6 +273,19 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         }
     }
     
+    /// Initializes a new game object and calls the startRound() method to start the first round of game play.
+    func startGame() {
+        do {
+            game = try Game(withNumItemsPerRound: GameConstants.numItemsPerRound,
+                            andNumRounds: GameConstants.numRounds,
+                            whereRoundsAreOfLengthInSeconds: GameConstants.numSecondsperRound,
+                            usingDataFromPListWithName: GameConstants.pListName)
+        } catch let error {
+            print("\(error)")
+            present(UIAlertController.fatalAlertController(), animated: true, completion: nil)
+        }
+    }
+    
     /// Calls the startRound(withTimerTarget: andSelector:) method in a Game instance. Additionally, this method updates the view by displaying the timer and setting the text to represent the correct number of seconds in the round, setting the instruction label text, and hiding the nextRoundImageView. Finally, the method reloads the collection view data so that the correct event titles are displayed. If the startRound method fails, the program will fail as well.
     func startRound() {
         do {
@@ -275,8 +299,8 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
             
             self.collectionView.reloadData()
         } catch let error {
-            print("\(error)")
-            fatalError()
+            print(error)
+            present(UIAlertController.fatalAlertController(), animated: true, completion: nil)
         }
     }
     

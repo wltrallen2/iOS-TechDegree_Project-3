@@ -26,7 +26,7 @@
                         <constraints>
                             <constraint firstItem="fxU-zn-BBI" firstAttribute="trailing" secondItem="SmZ-lv-tOU" secondAttribute="trailing" id="F5E-AF-fe2"/>
                             <constraint firstItem="SmZ-lv-tOU" firstAttribute="top" secondItem="9id-rM-rV8" secondAttribute="top" id="R2E-SY-kgJ"/>
-                            <constraint firstItem="fxU-zn-BBI" firstAttribute="bottom" secondItem="SmZ-lv-tOU" secondAttribute="bottom" id="mzJ-fa-jff"/>
+                            <constraint firstAttribute="bottom" secondItem="SmZ-lv-tOU" secondAttribute="bottom" id="mzJ-fa-jff"/>
                             <constraint firstItem="SmZ-lv-tOU" firstAttribute="leading" secondItem="9id-rM-rV8" secondAttribute="leading" id="syu-0y-Ebo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fxU-zn-BBI"/>

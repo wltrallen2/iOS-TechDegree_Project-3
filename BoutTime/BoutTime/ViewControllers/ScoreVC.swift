@@ -29,24 +29,4 @@ class ScoreVC: UIViewController {
         super.viewDidLoad()
         scoreLabel.text? = scoreToPresent
     }
-    
-    // MARK: - Action Methods
-    //**********************************************************************
-    /// When the playAgain image is tapped, this method will initialize a new instance of the Game class and pass it to the GameVC's game property. Then, this method calls the gameVC's startRound() method and dismisses itself.
-    @IBAction func playAgainImageTapped(_ sender: Any) {
-        if let gameVC = self.presentingViewController as? GameVC {
-            do {
-                gameVC.game = try Game(withNumItemsPerRound: GameConstants.numItemsPerRound,
-                                       andNumRounds: GameConstants.numRounds,
-                                       whereRoundsAreOfLengthInSeconds: GameConstants.numSecondsperRound,
-                                       usingDataFromPListWithName: GameConstants.pListName)
-                gameVC.startRound()
-            } catch let error {
-                print("\(error)")
-                fatalError()
-            }
-
-            dismiss(animated: true, completion: nil )
-        }
-    }
 }

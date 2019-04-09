@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_screen" translatesAutoresizingMaskIntoConstraints="NO" id="Bl9-Yc-Dox">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812.00000000000045"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAT-Q7-KSG">
                                 <rect key="frame" x="99.666666666666686" y="664" width="176" height="49"/>
@@ -373,9 +373,10 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBE-XO-H6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="esO-fJ-qe9" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="ZgK-Rc-7p1">
                     <connections>
-                        <action selector="playAgainImageTapped:" destination="JWn-wC-eLT" id="jNm-0e-VQh"/>
+                        <segue destination="esO-fJ-qe9" kind="unwind" unwindAction="unwindToGameVC:" id="BsD-6g-Gs7"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -425,9 +426,10 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v19-K5-kFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Qnw-c1-E8i" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="ajb-Cn-JqN" userLabel="Web Bar Tap Gesture Recognizer">
                     <connections>
-                        <action selector="webBarImageTapped:" destination="EHJ-RO-RqN" id="P2M-WE-AUF"/>
+                        <segue destination="Qnw-c1-E8i" kind="unwind" unwindAction="unwindToGameVC:" id="QhN-DE-Kf7"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

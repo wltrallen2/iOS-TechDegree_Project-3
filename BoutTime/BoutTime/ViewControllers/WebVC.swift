@@ -31,11 +31,4 @@ class WebVC: UIViewController, WKUIDelegate {
         }
         
     }
-    
-    // MARK: - Action Methods
-    //**********************************************************************
-    /// When the webBarImage is tapped, this method dismisses this view controller.
-    @IBAction func webBarImageTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
 }

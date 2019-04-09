@@ -34,15 +34,7 @@ class SplashVC: UIViewController {
     /// Tests the segue to ensure that it is a segue to a GameVC object, then initializes a new game and sets the game property in the GameVC object. If the game fails to initialize, the program will fail.
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let gameVC = segue.destination as? GameVC {
-            do {
-            gameVC.game = try Game(withNumItemsPerRound: GameConstants.numItemsPerRound,
-                               andNumRounds: GameConstants.numRounds,
-                               whereRoundsAreOfLengthInSeconds: GameConstants.numSecondsperRound,
-                               usingDataFromPListWithName: GameConstants.pListName)
-            } catch let error {
-                print("\(error)")
-                fatalError()
-            }
+            gameVC.startGame()
         }
      }
 
